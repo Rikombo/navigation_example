@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class StatefulPage extends StatefulWidget {
+  const StatefulPage({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _StatefulPageState();

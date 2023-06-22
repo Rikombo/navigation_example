@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:navigation_example/blue_page.dart';
 
 class RedPage extends StatelessWidget {
   const RedPage({super.key});
@@ -9,7 +7,7 @@ class RedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Red text',
         ),
       ),
@@ -23,16 +21,13 @@ class RedPage extends StatelessWidget {
   }
 
   Future<void> _showBluePage(BuildContext context) async {
-    final bluePage = BluePage(
+/*    final bluePage = BluePage(
       color: Colors.pink,
-      onClose: () {
-        print('Pink page closed');
-      },
-    );
-    final route = MaterialPageRoute(
+      onClose: () {},
+    );*/
+    /*final route = MaterialPageRoute(
       builder: (context) => bluePage,
-    );
-    final result = await Navigator.of(context).push(route);
-    print('Result: $result');
+    );*/
+    // final result = await Navigator.of(context).push(route);
   }
 }
