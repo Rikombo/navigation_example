@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
-class RedPage extends StatelessWidget {
+import 'blue_page.dart';
+
+class RedPage extends StatefulWidget {
   const RedPage({super.key});
+
+  @override
+  State<RedPage> createState() => _RedPageState();
+}
+
+class _RedPageState extends State<RedPage> {
+  Color color = Colors.red;
 
   @override
   Widget build(BuildContext context) {
@@ -14,20 +23,25 @@ class RedPage extends StatelessWidget {
       body: GestureDetector(
         onTap: () => _showBluePage(context),
         child: Container(
-          color: Colors.red,
+          color: color,
         ),
       ),
     );
   }
 
   Future<void> _showBluePage(BuildContext context) async {
-/*    final bluePage = BluePage(
-      color: Colors.pink,
-      onClose: () {},
-    );*/
-    /*final route = MaterialPageRoute(
-      builder: (context) => bluePage,
-    );*/
-    // final result = await Navigator.of(context).push(route);
+    final result = await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => BluePage(
+          color: Colors.green,
+          onClose: () {},
+        ),
+      ),
+    );
+    if (result != null) {
+      setState(() {
+        color = result;
+      });
+    }
   }
 }
